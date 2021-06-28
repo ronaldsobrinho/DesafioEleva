@@ -2,3 +2,8 @@ Server/SchoolManager/SchoolManager.Presentation.WebAPI/bin/
 Server/SchoolManager/SchoolManager.Presentation.WebAPI/obj/
 Server/SchoolManager/.vs/
 /.vs
+Server/SchoolManager/SchoolManager.Application.Service/obj/
+Server/SchoolManager/SchoolManager.Domain.Business/obj/
+Server/SchoolManager/SchoolManager.Domain.Model/obj/
+Server/SchoolManager/SchoolManager.InfraStructure.EFProvider/obj/
+Server/SchoolManager/SchoolManager.InfraStructure.Repository/obj/
