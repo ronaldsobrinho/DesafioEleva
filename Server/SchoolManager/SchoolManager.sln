@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{688F8327-4DB6-4F3F-A87B-21C94DC72D21}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Presentation", "1_Presentation", "{688F8327-4DB6-4F3F-A87B-21C94DC72D21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManager.Presentation.WebAPI", "SchoolManager.Presentation.WebAPI\SchoolManager.Presentation.WebAPI.csproj", "{EAA06FBC-C328-4A46-9EAA-6628DD7C2046}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolManager.Presentation.WebAPI", "SchoolManager.Presentation.WebAPI\SchoolManager.Presentation.WebAPI.csproj", "{EAA06FBC-C328-4A46-9EAA-6628DD7C2046}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_Application", "2_Application", "{89B400C8-A9CB-496F-ABE9-BEDAD8FB837E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_Domain", "3_Domain", "{80B37F25-A949-4B04-8BFD-B36DC3465391}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4_InfraStructure", "4_InfraStructure", "{13F1670E-53AD-4FF3-A3EF-920615A2B4A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1_Data", "4.1_Data", "{93CDA6AA-9F3F-4F0E-A826-68FC86203381}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2_CrossCutting", "4.2_CrossCutting", "{8DD2F0AF-D58B-4063-AFF1-7C3AC24B7BF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EAA06FBC-C328-4A46-9EAA-6628DD7C2046} = {688F8327-4DB6-4F3F-A87B-21C94DC72D21}
+		{93CDA6AA-9F3F-4F0E-A826-68FC86203381} = {13F1670E-53AD-4FF3-A3EF-920615A2B4A1}
+		{8DD2F0AF-D58B-4063-AFF1-7C3AC24B7BF6} = {13F1670E-53AD-4FF3-A3EF-920615A2B4A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD15E99A-0F5B-4F52-B9F5-AFEFCC743B95}
