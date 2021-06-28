@@ -7,3 +7,8 @@ Server/SchoolManager/SchoolManager.Domain.Business/obj/
 Server/SchoolManager/SchoolManager.Domain.Model/obj/
 Server/SchoolManager/SchoolManager.InfraStructure.EFProvider/obj/
 Server/SchoolManager/SchoolManager.InfraStructure.Repository/obj/
+Server/SchoolManager/SchoolManager.Application.Service/bin/
+Server/SchoolManager/SchoolManager.Domain.Business/bin/
+Server/SchoolManager/SchoolManager.Domain.Model/bin/
+Server/SchoolManager/SchoolManager.InfraStructure.EFProvider/bin/
+Server/SchoolManager/SchoolManager.InfraStructure.Repository/bin/
