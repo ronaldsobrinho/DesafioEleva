@@ -6,8 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolManager.Domain.Model\SchoolManager.Domain.Model.csproj" />
   </ItemGroup>
 
 </Project>

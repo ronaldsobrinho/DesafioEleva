@@ -12,3 +12,5 @@ Server/SchoolManager/SchoolManager.Domain.Business/bin/
 Server/SchoolManager/SchoolManager.Domain.Model/bin/
 Server/SchoolManager/SchoolManager.InfraStructure.EFProvider/bin/
 Server/SchoolManager/SchoolManager.InfraStructure.Repository/bin/
+Server/SchoolManager/SchoolManager.InfraStructure.Data/bin/
+Server/SchoolManager/SchoolManager.InfraStructure.Data/obj/
