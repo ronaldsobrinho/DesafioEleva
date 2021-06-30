@@ -122,6 +122,10 @@ footer a {
   align-items: center;
 }
 
+.active{
+  display: none;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
 

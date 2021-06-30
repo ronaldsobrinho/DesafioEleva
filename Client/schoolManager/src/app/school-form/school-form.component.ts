@@ -1,5 +1,6 @@
 import { SchoolService } from './../services/school.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-school-form',
@@ -10,7 +11,7 @@ export class SchoolFormComponent implements OnInit {
 
    name? : string;
 
-  constructor(private service :  SchoolService) {
+  constructor(private service : SchoolService , private router : Router) {
   }
 
   ngOnInit(): void {
@@ -19,7 +20,11 @@ export class SchoolFormComponent implements OnInit {
   Save():void{
 
     if (this.name != undefined) {
-      this.service.Create(this.name).subscribe(c=> alert('Escola criada'));
+      this.service.Create(this.name).subscribe(c=> {
+        alert('Escola criada');
+        this.router.navigateByUrl("schools");
+      }
+      );
     }
   }
 
