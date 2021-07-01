@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolManager.Application.Service\SchoolManager.Application.Service.csproj" />
+    <ProjectReference Include="..\SchoolManager.Domain\SchoolManager.Domain.csproj" />
     <ProjectReference Include="..\SchoolManager.InfraStructure.EFProvider\SchoolManager.InfraStructure.EFProvider.csproj" />
     <ProjectReference Include="..\SchoolManager.InfraStructure.Repository\SchoolManager.InfraStructure.Repository.csproj" />
   </ItemGroup>
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.16" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
 

@@ -9,10 +9,7 @@ namespace SchoolManager.Presentation.WebAPI.Controllers
     public class SchoolController : ControllerBase
     {
         private readonly ISchoolService _service;
-        /// <summary>
-        /// Todo:Remover dependência do entityFramework
-        /// </summary>
-        /// <param name="context"></param>
+        
         public SchoolController(ISchoolService service)
         {
             _service = service; 

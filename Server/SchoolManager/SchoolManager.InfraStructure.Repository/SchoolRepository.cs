@@ -1,10 +1,8 @@
-﻿using SchoolManager.Domain.Business.Repositories;
-using SchoolManager.Domain.Model;
+﻿using SchoolManager.Domain.Model;
 using SchoolManager.Domain.Model.Contracts;
+using SchoolManager.Domain.Repositories;
 using SchoolManager.InfraStructure.Data;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SchoolManager.InfraStructure.Repository
 {

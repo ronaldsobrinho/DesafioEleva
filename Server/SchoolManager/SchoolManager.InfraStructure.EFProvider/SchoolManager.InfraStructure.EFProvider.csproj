@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolManager.Domain.Model\SchoolManager.Domain.Model.csproj" />
+    <ProjectReference Include="..\SchoolManager.Domain\SchoolManager.Domain.csproj" />
     <ProjectReference Include="..\SchoolManager.InfraStructure.Data\SchoolManager.InfraStructure.Data.csproj" />
   </ItemGroup>
 

@@ -16,3 +16,5 @@ Server/SchoolManager/SchoolManager.InfraStructure.Data/bin/
 Server/SchoolManager/SchoolManager.InfraStructure.Data/obj/
 Server/SchoolManager/SchoolManager.InfraStructure.MockProvider/bin/
 Server/SchoolManager/SchoolManager.InfraStructure.MockProvider/obj/
+Server/SchoolManager/SchoolManager.Domain/bin/
+Server/SchoolManager/SchoolManager.Domain/obj/

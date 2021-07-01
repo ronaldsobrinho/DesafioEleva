@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SchoolManager.Domain.Model;
+using SchoolManager.Domain.Models;
 
 namespace SchoolManager.InfraStructure.EFProvider
 {
@@ -12,6 +13,7 @@ namespace SchoolManager.InfraStructure.EFProvider
         }
 
         public DbSet<SchoolModel> SchoolModel { get; set; }
+        public DbSet<ClassModel> ClassModel { get; set; }
 
         
     }

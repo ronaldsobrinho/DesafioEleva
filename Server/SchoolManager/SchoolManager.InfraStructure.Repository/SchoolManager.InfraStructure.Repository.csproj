@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SchoolManager.Domain.Business\SchoolManager.Domain.Business.csproj" />
     <ProjectReference Include="..\SchoolManager.Domain.Model\SchoolManager.Domain.Model.csproj" />
+    <ProjectReference Include="..\SchoolManager.Domain\SchoolManager.Domain.csproj" />
     <ProjectReference Include="..\SchoolManager.InfraStructure.Data\SchoolManager.InfraStructure.Data.csproj" />
     <ProjectReference Include="..\SchoolManager.InfraStructure.EFProvider\SchoolManager.InfraStructure.EFProvider.csproj" />
     <ProjectReference Include="..\SchoolManager.InfraStructure.MockProvider\SchoolManager.InfraStructure.MockProvider.csproj" />

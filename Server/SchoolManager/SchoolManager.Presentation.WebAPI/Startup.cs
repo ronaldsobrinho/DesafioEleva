@@ -5,11 +5,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SchoolManager.Application.Service;
-using SchoolManager.Domain.Business.Repositories;
+using SchoolManager.Application.Service.Handlers;
+using SchoolManager.Domain.Contracts;
 using SchoolManager.Domain.Model;
+using SchoolManager.Domain.Models;
+using SchoolManager.Domain.Repositories;
 using SchoolManager.InfraStructure.Data;
 using SchoolManager.InfraStructure.EFProvider;
-using SchoolManager.InfraStructure.MockProvider;
 using SchoolManager.InfraStructure.Repository;
 
 namespace SchoolManager.Presentation.WebAPI
@@ -40,12 +42,15 @@ namespace SchoolManager.Presentation.WebAPI
 
             services.AddControllers();
 
+            //services dependencies
             services.AddTransient<ISchoolService, SchoolService>();
             services.AddTransient<ISchoolRepository<SchoolModel>, SchoolRepository>();
-            
-            //services.AddTransient<IProvider<Domain.Model.SchoolModel>, SchoolMockProvider>();
-            
-            services.AddTransient<IProvider<Domain.Model.SchoolModel>, SchoolProvider>();
+            services.AddTransient<IClassService, ClassService>();
+            services.AddTransient<IClassRepository<ClassModel>,ClassRepository>();
+                                                            
+            //infra dependencies
+            services.AddTransient<IProvider<SchoolModel>, SchoolProvider>();
+            services.AddTransient<IProvider<ClassModel>, ClassEFProvider>();
             services.AddDbContext<InfraStructure.EFProvider.SchoolManagerContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("SchoolManagerContext")));
             services.AddScoped<SchoolManagerContext>();
