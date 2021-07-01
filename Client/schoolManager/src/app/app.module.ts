@@ -8,13 +8,17 @@ import { SchoolListComponent } from './school-list/school-list.component';
 import { SchoolFormComponent } from './school-form/school-form.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import {  RouterModule } from '@angular/router';
+import { ClassComponent } from './class/class.component';
+import { ClassFormComponent } from './class-form/class-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SchoolListComponent,
-    SchoolFormComponent
+    SchoolFormComponent,
+    ClassComponent,
+    ClassFormComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,AppRoutingModule,RouterModule

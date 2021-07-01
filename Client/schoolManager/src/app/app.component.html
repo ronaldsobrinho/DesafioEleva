@@ -2,13 +2,14 @@
 <header>
   <a routerLink='schools' routerLinkActive='active'>Escolas</a>
   <a routerLink='newSchool' routerLinkActive='active'>Nova escola</a>
+  <div class="card highlight-card card-small">
+    {{ title }}
+   </div>
 </header>
 <div class="content" role="main">
 
   <!-- Highlight Card -->
-   <div class="card highlight-card card-small">
-    {{ title }}
-   </div>
+
 
   <router-outlet></router-outlet>
 
