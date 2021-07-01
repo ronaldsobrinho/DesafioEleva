@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SchoolManager.Application.Service;
+using SchoolManager.Domain.Model;
 
 namespace SchoolManager.Presentation.WebAPI.Controllers
 {
@@ -19,14 +20,15 @@ namespace SchoolManager.Presentation.WebAPI.Controllers
 
         // GET: api/School
         [HttpGet]
-        public IActionResult GetSchoolModel()
+        public IActionResult GetAllSchools()
         {            
+            //todo: adequar fluxo de erro
             return  Ok(_service.GetAll());
         }
 
         //// GET: api/School/5
         //[HttpGet("{id}")]
-        //public async Task<ActionResult<SchoolModel>> GetSchoolModel(int id)
+        //public IActionResult GetSchoolModel(int id)
         //{
         //    var schoolModel = await _context.SchoolModel.FindAsync(id);
 
@@ -38,6 +40,15 @@ namespace SchoolManager.Presentation.WebAPI.Controllers
         //    return schoolModel;
         //}
 
+        //// POST: api/School        
+        [HttpPost]
+        public IActionResult PostSchoolModel([FromBody]  SchoolModel schoolModel)
+        {
+            _service.Add(schoolModel);            
+            //return CreatedAtAction("GetSchoolModel", new { id = schoolModel.Id }, schoolModel);
+            return Ok();
+        }
+        
         //// PUT: api/School/5
         //// To protect from overposting attacks, enable the specific properties you want to bind to, for
         //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -70,17 +81,7 @@ namespace SchoolManager.Presentation.WebAPI.Controllers
         //    return NoContent();
         //}
 
-        //// POST: api/School
-        //// To protect from overposting attacks, enable the specific properties you want to bind to, for
-        //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        //[HttpPost]
-        //public async Task<ActionResult<SchoolModel>> PostSchoolModel(SchoolModel schoolModel)
-        //{
-        //    _context.SchoolModel.Add(schoolModel);
-        //    await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetSchoolModel", new { id = schoolModel.Id }, schoolModel);
-        //}
 
         //// DELETE: api/School/5
         //[HttpDelete("{id}")]

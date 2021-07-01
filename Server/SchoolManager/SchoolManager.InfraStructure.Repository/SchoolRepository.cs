@@ -8,7 +8,7 @@ using System.Text;
 
 namespace SchoolManager.InfraStructure.Repository
 {
-    public class SchoolRepository:ISchoolRepository
+    public class SchoolRepository:ISchoolRepository<SchoolModel>
     {
         IProvider<SchoolModel> _provider;
 
@@ -22,6 +22,11 @@ namespace SchoolManager.InfraStructure.Repository
         public IEnumerable<ISchool> GetAll()
         {
             return _provider.GetAll();
+        }
+
+        public void Insert(SchoolModel schoolModel)
+        {            
+            _provider.Insert(schoolModel);
         }
     }
 }

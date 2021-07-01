@@ -20,5 +20,11 @@ namespace SchoolManager.InfraStructure.EFProvider
         {
             return _context.SchoolModel.ToList();
         }
+
+        public void Insert(SchoolModel schoolModel)
+        {
+            _context.Add(schoolModel);
+            _context.SaveChanges();
+        }
     }
 }
