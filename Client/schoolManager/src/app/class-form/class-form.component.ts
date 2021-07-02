@@ -42,12 +42,18 @@ export class ClassFormComponent implements OnInit {
       .subscribe(s => {
         alert('Turma criada');
         this.onSave.emit(model.schoolId);
+        this.clean();
       }
         , error => {
           console.log(error);
           alert('Falha ao criar a turma');
         }
       )
+  }
+
+  clean(){
+    this.name="";
+    this.studentQuantity= 0;
   }
 
   serialize(): ClassModel {

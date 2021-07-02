@@ -1,12 +1,11 @@
 
 <!-- <a routerLink='/newClass' routerLinkActive='active' [queryParams] = "{schoolId : schoolId}" queryParamsHandling = "preserve"  >Nova turma</a>
 <a routerLink="/classes" routerLinkActive='active'>turmas</a> -->
-
-<app-class-form (onSave)='listClasses($event)' ></app-class-form>
-
-<div class="card highlight-card card-small">
+<h2>
   {{ schoolName }}
- </div>
+</h2>
+<app-class-form (onSave)='listClasses($event)' ></app-class-form>
+<div>
  <p>Quantidade de turmas:{{total}}</p>
  <ul class="list-group" *ngFor="let item of classes">
    <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -14,6 +13,7 @@
      <span class="badge badge-primary badge-pill">{{item.studentQuantity}}</span>
    </li>
  </ul>
+</div>
 
 
 
