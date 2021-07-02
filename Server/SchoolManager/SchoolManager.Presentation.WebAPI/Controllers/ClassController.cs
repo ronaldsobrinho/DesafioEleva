@@ -14,15 +14,21 @@ namespace SchoolManager.Presentation.WebAPI.Controllers
             _service = service;
         }
         // GET: Class/5
-        //[HttpGet("{id}", Name = "Get")]
-        [HttpGet()]
-        ///public IActionResult Get(int schoolId)
-        public IActionResult Get()
+        [HttpGet("{id}", Name = "Get")]
+        public IActionResult Get(int id)        
         {
-            //todo: retorno de erro
-            //todo: aplicar parametro 
-            //return Ok(_service.GetAll(schoolId));
-            return Ok(_service.GetAll(0));
+            IActionResult result;
+            
+            try
+            {
+                result =  Ok(_service.GetAll(id));
+            }
+            catch (System.Exception ex)
+            {
+                result = BadRequest(ex.Message);
+                
+            }
+            return result;
         }
 
         // POST: api/Class

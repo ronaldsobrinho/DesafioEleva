@@ -2,9 +2,9 @@
 {
     public class ClassModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public string StudentQuantity { get; set; }
-        public string SchoolId { get; set; }
+        public int StudentQuantity { get; set; }
+        public int SchoolId { get; set; }
     }
 }

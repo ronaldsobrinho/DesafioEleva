@@ -3,6 +3,7 @@ using SchoolManager.Domain.Models;
 using SchoolManager.InfraStructure.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SchoolManager.InfraStructure.Repository
@@ -21,7 +22,8 @@ namespace SchoolManager.InfraStructure.Repository
 
         public IEnumerable<ClassModel> GetAll(int schoolId)
         {
-            return _provider.GetAll();
+            //Todo: propagar criterio para o provedor
+            return _provider.GetAll().Where(c=>c.SchoolId == schoolId);
         }
     }
 }

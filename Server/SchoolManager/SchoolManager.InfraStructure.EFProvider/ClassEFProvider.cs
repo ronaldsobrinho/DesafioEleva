@@ -13,6 +13,7 @@ namespace SchoolManager.InfraStructure.EFProvider
         }
         public IEnumerable<ClassModel> GetAll()
         {
+            //todo: segmentar provedor para padrão command. Não faz sentido recuperar tudo para filtrar em memória
             return _context.ClassModel.ToList();
         }
 
