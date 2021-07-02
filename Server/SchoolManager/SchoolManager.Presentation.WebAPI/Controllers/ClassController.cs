@@ -35,10 +35,22 @@ namespace SchoolManager.Presentation.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] ClassModel classModel)
         {
-            _service.Add(classModel);
+
+            IActionResult result;
+            try
+            {
+                _service.Add(classModel);
+            }
+            catch (System.Exception ex)
+            {
+                result = BadRequest(ex.Message);
+            }
+            
             return Ok();
         }
 
+        
+        //Todo: implementar ações  de alteração e exclusão
         //// PUT: api/Class/5
         //[HttpPut("{id}")]
         //public void Put(int id, [FromBody] ClassModel classModel)
