@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { schoolModel } from './../models/schoolModel';
 import { Component, OnInit } from '@angular/core';
 import { SchoolService } from '../services/school.service';
@@ -11,7 +12,7 @@ export class SchoolListComponent implements OnInit {
 
   total : number;
   schools:schoolModel[];
-  constructor(private service : SchoolService) {
+  constructor(private service : SchoolService , private router : Router) {
     this.schools = [];
     this.total = this.schools.length;
   }
@@ -24,5 +25,4 @@ export class SchoolListComponent implements OnInit {
       this.schools = schoolList;
       this.total = this.schools.length;
   }
-
 }

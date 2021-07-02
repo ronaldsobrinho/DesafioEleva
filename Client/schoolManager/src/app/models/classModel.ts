@@ -1,6 +1,6 @@
 export interface ClassModel {
-  id: number | string;
+  id: number ;
   name: string;
-  studentQuantity: number | string;
-  schoolId : number | string;
+  studentQuantity: number ;
+  schoolId : number ;
 }

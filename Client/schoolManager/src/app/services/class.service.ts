@@ -1,5 +1,5 @@
 
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ClassModel } from '../models/classModel';
@@ -18,6 +18,6 @@ export class ClassService {
   }
 
   GetAll(schoolId : number): Observable<ClassModel[]> {
-    return this.httpClient.get<ClassModel[]>(this.url);
+    return this.httpClient.get<ClassModel[]>(this.url + '/'+schoolId,);
   }
 }

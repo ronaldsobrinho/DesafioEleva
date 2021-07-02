@@ -3,7 +3,6 @@
   <li class="list-group-item d-flex justify-content-between align-items-center">
     {{item.name}}
     <span class="badge badge-primary badge-pill">{{item.totalClasses}}</span>
-    <span class="badge badge-primary badge-pill"><a routerLink='/classes'>Turmas</a></span>
+    <span class="badge badge-primary badge-pill"><a routerLink='/classes'  [queryParams] = "{schoolId : item.id , schoolName:item.name}">Turmas</a></span>
   </li>
 </ul>
-<router-outlet></router-outlet>

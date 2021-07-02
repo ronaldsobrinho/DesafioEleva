@@ -1,41 +1,57 @@
 import { ClassModel } from './../models/classModel';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ClassService } from './../services/class.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-class-form',
   templateUrl: './class-form.component.html',
   styleUrls: ['./class-form.component.scss']
 })
+
+
 export class ClassFormComponent implements OnInit {
 
-  name: string;
-  studentQuantity: number;
+  @Output() onSave = new EventEmitter<number>();
+  schoolId: number = 0;
+  name: string = "";
+  studentQuantity: number = 0;
 
-  constructor(private service: ClassService, private router: Router) {
-    this.name = "";
-    this.studentQuantity = 0
-
+  constructor(private service: ClassService, private activatedRoute: ActivatedRoute) {
+  }
+  ngOnInit(): void {
+    this.activatedRoute.queryParamMap
+      .subscribe((params) => {
+        console.log(params);
+        this.setParams(params);
+      });
   }
 
-  ngOnInit(): void {
+  setParams(params: any) {
+    let param = params.get("schoolId");
+    //todo retornar um erro amigável se não conseguir ler este parâmetro;
+    param = param != undefined ? parseInt(param) : 0;
+    this.schoolId = param;
   }
 
   save() {
-    console.log(this.name);
-    this.service.Create(
-      this.createNewClassModel()
-    ).subscribe(s => {
-      alert('turma criada');
-      this.router.navigateByUrl("/classes");
-
-    })
+    let model = this.serialize();
+    this.service.Create(model)
+      .subscribe(s => {
+        alert('Turma criada');
+        this.onSave.emit(model.schoolId);
+      }
+        , error => {
+          console.log(error);
+          alert('Falha ao criar a turma');
+        }
+      )
   }
 
-  createNewClassModel(): ClassModel {
-    return { id: 0, name: this.name, studentQuantity: 0, schoolId: 0 };
-
+  serialize(): ClassModel {
+    return { id: 0, name: this.name, studentQuantity: this.studentQuantity, schoolId: this.schoolId };
   }
 
 }

@@ -1,6 +1,9 @@
 
-<a routerLink='/newClass' routerLinkActive='active'>Nova turma</a>
-<a routerLink="/classes" routerLinkActive='active'>turmas</a>
+<!-- <a routerLink='/newClass' routerLinkActive='active' [queryParams] = "{schoolId : schoolId}" queryParamsHandling = "preserve"  >Nova turma</a>
+<a routerLink="/classes" routerLinkActive='active'>turmas</a> -->
+
+<app-class-form (onSave)='listClasses($event)' ></app-class-form>
+
 <div class="card highlight-card card-small">
   {{ schoolName }}
  </div>

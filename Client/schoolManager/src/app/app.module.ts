@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import {  RouterModule } from '@angular/router';
 import { ClassComponent } from './class/class.component';
 import { ClassFormComponent } from './class-form/class-form.component';
-
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { ClassFormComponent } from './class-form/class-form.component';
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,AppRoutingModule,RouterModule
+    ,CommonModule
 
   ],
   providers: [],

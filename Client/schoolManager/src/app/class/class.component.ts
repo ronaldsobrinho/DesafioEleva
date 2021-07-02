@@ -1,6 +1,7 @@
 import { ClassService } from './../services/class.service';
 import { ClassModel } from './../models/classModel';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-class',
@@ -9,27 +10,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassComponent implements OnInit {
 
-  schoolName : string;
-  classes : ClassModel[]
+  schoolId: number;
+  schoolName: string;
+  classes: ClassModel[]
   total: number;
-  //todo : receber de outro componente
-  constructor(private service : ClassService) {
-      this.schoolName = "TEste";
-      this.classes = [];
-      this.total = 0;
+
+  constructor(private service: ClassService, private router: ActivatedRoute) {
+    this.schoolId = 0;
+    this.schoolName = "";
+    this.classes = [];
+    this.total = 0;
   }
 
   ngOnInit(): void {
-      this.service.GetAll(0).subscribe(obj=>
-          this.setClasses(obj));
-      };
 
- setClasses(classList:ClassModel[]):void{
-          this.classes = classList;
-          this.total = this.classes.length;
+    this.router.queryParamMap
+      .subscribe((params) => {
+        console.log(params);
+        this.setParams(params);
+      });
+
+    this.service.GetAll(this.schoolId).subscribe(obj =>
+      this.setClasses(obj));
+  };
+
+  setParams(params: any) {
+    //console.log(params);
+    this.schoolId = params.get('schoolId');
+    this.schoolName = params.get('schoolName');
+  }
+
+  setClasses(classList: ClassModel[]): void {
+    this.classes = classList;
+    this.total = this.classes.length;
+  }
+
+  listClasses(schoolId: number): void {
+    this.service.GetAll(this.schoolId).subscribe(obj =>
+      this.setClasses(obj));
+  }
 }
 
 
-}
+
+
+
 
 
